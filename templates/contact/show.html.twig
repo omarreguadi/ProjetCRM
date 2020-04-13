@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+    <div class="row mb-5 mt-3">
+        <div class="col-12">
+            <h1 class="h1">Contacts</h1>
+        </div>
+    </div>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ contact.id }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ contact.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ contact.nom }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ contact.email }}</td>
+            </tr>
+            <tr>
+                <th>Numero de telephone</th>
+                <td>{{ contact.numerotelephone }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="btn btn-primary" href="{{ path('contact_index') }}">Revenir à la liste</a>
+
+    <a class="btn btn-primary" href="{{ path('contact_edit', {'id': contact.id}) }}">editer</a>
+
+    {{ include('contact/_delete_form.html.twig') }}
+</div>
+{% endblock %}
